@@ -14,7 +14,7 @@ on_term() {
   printf "\033[1;31m%s\033[m\n" "I have been killed !"
   exit 123
 }
-trap "on_exit;on_term" TERM
+trap on_term TERM
 trap on_exit EXIT
 
 TEMPFILE=$(mktemp)
